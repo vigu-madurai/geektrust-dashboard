@@ -1,0 +1,79 @@
+.search-results-wrapper {
+	max-width: 940px;
+	height: auto;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.user-card-wrapper {
+	border: solid 1px #222;
+	border-radius: 5px;
+	padding: 6px 12px;
+	width: 200px;
+	height: 230px;
+	margin: 12px 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.user-card-functions {
+	position: absolute;
+	top: 2px;
+	right: 0;
+	display: inline;
+}
+
+.user-card-functions div {
+	cursor: pointer;
+	display: inline;
+	padding: 4px 6px;
+	font-size: 12px;
+	color: #23BBAC;
+    transition: none;
+}
+
+.edit:hover {
+    background-color: #23BBAC;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.delete:hover {
+    background-color: #EA5A87;
+    color: #333;
+    border-top-right-radius: 5px;
+}
+
+.f-l-name {
+	width: 100px;
+	height: 100px;
+	border: transparent;
+	border-radius: 50%;
+	color: #333;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3.2;
+}
+
+.full-name {
+	color: inherit;
+	font-size: 16px;
+}
+
+.role {
+	font-weight: lighter;
+	font-size: 16px;
+}
+
+.email {
+	font-weight: lighter;
+	position: absolute;
+	bottom: 0;
+}

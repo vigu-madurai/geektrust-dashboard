@@ -9,13 +9,11 @@ function App() {
   useEffect(() => {
     getUserData();
     async function getUserData () {
-      const output = await fetch(apiUrl[USER_API].url).then(response => {
+      return await fetch(apiUrl[USER_API].url).then(response => {
         if (response.ok)
           return response.json();
       }).then(data => {
-        console.log(data);
-        setUserData(data);
-        return output;
+        return setUserData(data);
       }).catch(err => {
         console.log("Get User Data fails: ", err.msg)
         return err.msg;
@@ -29,8 +27,7 @@ function App() {
         GeekTrust Frontend Challenge | Dashboard
       </header>
       <section className="section">
-        <SearchBar />
-        {JSON.stringify(userData)}
+        <SearchBar userData={userData} />
       </section>
       <footer>
         Creator: Vigneshwaran Kannan | kvigneshwaranit@gmail.com

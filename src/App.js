@@ -1,8 +1,28 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
+import { apiUrl, USER_API } from './utils/api';
 
 function App() {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    getUserData();
+    async function getUserData () {
+      const output = await fetch(apiUrl[USER_API].url).then(response => {
+        if (response.ok)
+          return response.json();
+      }).then(data => {
+        console.log(data);
+        setUserData(data);
+        return output;
+      }).catch(err => {
+        console.log("Get User Data fails: ", err.msg)
+        return err.msg;
+      });
+    }
+  }, []);
+  
   return (
     <div className="App">
       <header>
